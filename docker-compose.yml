@@ -3,8 +3,8 @@ version: "3.7"
 services:
   amazin-object-storage-node-1: &object-storage-node
     image: minio/minio
-    command: server /tmp/data
-    ports: [ "9001:9000" ] # You can open localhost:9001 in your browser to debug what objects are on this node.
+    command: server --console-address ":9001" /tmp/data
+    ports: [ "9001:9001" ] # You can open localhost:9001 in your browser to debug what objects are on this node.
     networks:
       amazin-object-storage:
         # Don't copy those addresses in your application. Use the local docker socket to get them.
@@ -16,7 +16,7 @@ services:
 
   amazin-object-storage-node-2:
     <<: *object-storage-node
-    ports: [ "9002:9000" ] # You can open localhost:9002 in your browser to debug what objects are on this node.
+    ports: [ "9002:9001" ] # You can open localhost:9002 in your browser to debug what objects are on this node.
     networks:
       amazin-object-storage:
         ipv4_address: 169.253.0.3
@@ -26,7 +26,7 @@ services:
 
   amazin-object-storage-node-3:
     <<: *object-storage-node
-    ports: [ "9003:9000" ] # You can open localhost:9003 in your browser to debug what objects are on this node.
+    ports: [ "9003:9001" ] # You can open localhost:9003 in your browser to debug what objects are on this node.
     networks:
       amazin-object-storage:
         ipv4_address: 169.253.0.4
