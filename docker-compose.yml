@@ -1,5 +1,3 @@
-version: "3.7"
-
 services:
   amazin-object-storage-node-1: &object-storage-node
     image: minio/minio

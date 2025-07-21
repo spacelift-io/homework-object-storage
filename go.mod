@@ -1,3 +1,3 @@
 module github.com/spacelift-io/homework-object-storage
 
-go 1.15
+go 1.24
