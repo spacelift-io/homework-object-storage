@@ -32,7 +32,7 @@ Feel free to modify the docker-compose.yml file, as well as the Dockerfile, as y
 
 The project should work out of the box using
 ```
-docker-compose up --build
+docker compose up --build
 ```
 
 Good luck!

@@ -1,4 +1,4 @@
-FROM golang:1.15
+FROM golang:1.24-alpine
 WORKDIR /mnt/homework
 COPY . .
 RUN go build
